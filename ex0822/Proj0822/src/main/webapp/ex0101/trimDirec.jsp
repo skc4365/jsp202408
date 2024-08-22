@@ -8,6 +8,7 @@
 <title>trimDirectiveWhitespaces</title>
 </head>
 <body>
+	<!-- trimDirectiveWhitespaces="true" 코드보기의 공백제거 -->
 	<h2>page 지시어로 trimDirectiveWhitespaces속성</h2>
 	trimDirectiveWhitespaces
 </body>

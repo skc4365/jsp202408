@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<!-- include file="./includeFile.jsp" 파일추가 -->
 	<%
 	out.println("오늘 날짜: " + today);
 	out.println("<br>");

@@ -7,6 +7,7 @@
 <title>page지시어 - buffer, autoFlush</title>
 </head>
 <body>
+	<!-- 버퍼테스트 -->
 	<%
 	for (int i = 1; i <= 100; i++) {
 		out.println("abcde12345");

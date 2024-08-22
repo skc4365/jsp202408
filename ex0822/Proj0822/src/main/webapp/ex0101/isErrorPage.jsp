@@ -7,6 +7,7 @@
 <title>나의 에러페이지</title>
 </head>
 <body>
+	<!-- isErrorPage="true" 에러를 임의발생  -->
 	<h2>서비스 중 일시적인 오류가 발생하였습니다.</h2>
 	<p>
 		오류명:
