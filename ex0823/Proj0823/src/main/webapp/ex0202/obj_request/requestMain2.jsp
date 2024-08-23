@@ -12,9 +12,7 @@ request.setAttribute("requestPerson", new Person("안중근", 31));
 <meta charset="UTF-8">
 <title>request 영역의 속성값 삭제하기</title>
 </head>
-
 <body>
-
 	<h2>request 영역의 속성값 읽기</h2>
 	<%
 	Person rPerson = (Person) (request.getAttribute("requestPerson"));
@@ -28,7 +26,5 @@ request.setAttribute("requestPerson", new Person("안중근", 31));
 	<%
 	request.getRequestDispatcher("requestForward.jsp?paramHan=한글&paramEng=English").forward(request, response);
 	%>
-
 </body>
-
 </html>
