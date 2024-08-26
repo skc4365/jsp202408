@@ -4,17 +4,16 @@
 String popupMode = "on";
 
 Cookie[] cookies = request.getCookies();
-if(cookies != null){
-	for(Cookie c: cookies){
+if (cookies != null) {
+	for (Cookie c : cookies) {
 		String cookieName = c.getName();
 		String cookieValue = c.getValue();
 		/* 사용자 [v]오늘하루보지않기 체크 여부 */
-		if(cookieName.equals("popupClose")){
-			popupMode = cookieValue;
+		if (cookieName.equals("popupClose")) {
+	popupMode = cookieValue;
 		}
 	}
 }
-
 %>
 <!DOCTYPE html>
 <html>
@@ -26,7 +25,8 @@ if(cookies != null){
 	href="${pageContext.request.contextPath}/css/style.css">
 <!-- <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/js/script.js"></script>
 
 </head>
