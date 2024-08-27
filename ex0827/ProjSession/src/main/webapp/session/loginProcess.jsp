@@ -20,13 +20,16 @@ String oraclePwd = application.getInitParameter("OraclePwd");
    // MemberDTO:
 	   회원 한명에 대한 정보(테이블ROW)를 get/set 할 수 있는 저장공간(변수클래스)으로 사용한다. 
 -----------------------------------------------*/
+// 데이터베이스 연결
 MemberDAO dao = new MemberDAO(oracleDriver, oracleURL, oracleId, oraclePwd);
+// 쿼리 실행 + DTO 값을 저장
 MemberDTO dto = dao.getMemberDTO(userId, userPwd);
+// 데이터베이스 close()
 dao.close();
 
 // 세션에 아이디와 이름을 저장
 if (dto.getId() != null) {
-	// 로그인 성공
+	// 로그인 성공, 세션에 로그인정보 저장
 	session.setAttribute("UserId", dto.getId());
 	session.setAttribute("UserName", dto.getName());
 	response.sendRedirect("./loginForm.jsp");

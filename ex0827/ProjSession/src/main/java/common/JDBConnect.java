@@ -35,7 +35,7 @@ public class JDBConnect {
 			con = DriverManager.getConnection(url, id, pwd);
 			System.out.println("DB 연결 성공(web.xml의 인수생성자1)");
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 
 	}

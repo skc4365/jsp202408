@@ -4,10 +4,12 @@ import common.JDBConnect;
 
 public class MemberDAO extends JDBConnect {
 
+//	데이터베이스 연결Connect
 	public MemberDAO(String drv, String url, String id, String pw) {
 		super(drv, url, id, pw);
 	}
 
+//	쿼리를 실행한 결과정보를, DTO에 저장하는 함수.
 	public MemberDTO getMemberDTO(String uid, String upass) {
 		MemberDTO dto = new MemberDTO();
 		String query = "SELECT * FROM member WHERE id=? AND pass=?";
