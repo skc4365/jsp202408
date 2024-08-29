@@ -5,7 +5,7 @@
 <%@page import="model1.board.BoardDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
+
 <%
 BoardDAO dao = new BoardDAO(application);
 Map<String, Object> param = new HashMap<String, Object>();
@@ -15,9 +15,9 @@ if (searchWord != null) {
 	param.put("searchField", searchField);
 	param.put("searchWord", searchWord);
 }
-int totalCount = dao.selectCount(param);  // 게시물 수 확인
-List<BoardDTO> boardLists = dao.selectList(param);  // 게시물 목록 받기
-dao.close();  // DB 연결 닫기
+int totalCount = dao.selectCount(param); // 게시물 수 확인
+List<BoardDTO> boardLists = dao.selectList(param); // 게시물 목록 받기
+dao.close(); // DB 연결 닫기
 %>
 <!DOCTYPE html>
 <html>
@@ -28,7 +28,7 @@ dao.close();  // DB 연결 닫기
 </head>
 
 <body>
-	<%@ include file="../common/link.jsp"%>
+	<%@ include file="/common/link.jsp"%>
 	<h2>목록 보기</h2>
 	<!-- 검색폼 -->
 	<form method="get">
@@ -66,24 +66,29 @@ dao.close();  // DB 연결 닫기
 		for (BoardDTO dto : boardLists) {
 			virtualNum = totalCount--; // 전체 게시물 수에서 시작해 1씩 감소
 		%>
-		<tr>
-			<td></td>
-			<td><a href="../view.jsp"></a></td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-	</table>
-	<%
-	}
-	}
-	%>
-	<!-- 목록 하단 [글쓰기] 버튼 -->
-	<table>
-		<tr>
-			<td>
-				<button type="button" onclick="location.href='../write.jsp';">글쓰기</button>
+		<tr align="center">
+			<td><%=virtualNum%></td>
+			<!--게시물 번호-->
+			<td align="left">
+				<!--제목(+ 하이퍼링크)--> <a href="/view.jsp?num=<%=dto.getNum()%>"><%=dto.getTitle()%></a>
 			</td>
+			<td align="center"><%=dto.getId()%></td>
+			<!--작성자 아이디-->
+			<td align="center"><%=dto.getVisitcount()%></td>
+			<!--조회수-->
+			<td align="center"><%=dto.getPostdate()%></td>
+			<!--작성일-->
+		</tr>
+		<%
+		}
+		}
+		%>
+	</table>
+	<!--목록 하단의 [글쓰기] 버튼-->
+	<table border="1" width="90%">
+		<tr align="right">
+			<td><button type="button" onclick="location.href='/write.jsp';">글쓰기
+				</button></td>
 		</tr>
 	</table>
 

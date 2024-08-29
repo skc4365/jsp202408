@@ -27,15 +27,18 @@ public class JDBConnect {
 	 */
 
 //	HOW2--- 생성자( driver, url, id, pwd)
-	/*
-	 * public JDBConnect(String driver, String url, String id, String pwd) {
-	 * 
-	 * try { Class.forName(driver); con = DriverManager.getConnection(url, id, pwd);
-	 * System.out.println("DB 연결 성공(web.xml의 인수생성자1)"); } catch (Exception e) {
-	 * e.printStackTrace(); }
-	 * 
-	 * }
-	 */
+
+	public JDBConnect(String driver, String url, String id, String pwd) {
+
+		try {
+			Class.forName(driver);
+			con = DriverManager.getConnection(url, id, pwd);
+			System.out.println("DB 연결 성공(web.xml의 인수생성자1)");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
 
 //	HOW3--- JDBConnect(ServletContext application) 생성자
 	public JDBConnect(ServletContext application) {
