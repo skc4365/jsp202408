@@ -79,6 +79,5 @@ SELECT * FROM all_constraints;
 	
 --	타이틀에 '%홍길동%' 글자가 포함된 행(Row)의 갯수를 결과롱 돌려준다. 
 SELECT count(*) FROM board WHERE title LIKE '%홍길동%';	
-	
-	
-	
+
+--SELECT * FROM board WHERE title  LIKE '%여름%';

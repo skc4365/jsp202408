@@ -25,24 +25,14 @@ dao.close(); // DB 연결 해제
 <%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/css/view.css"> --%>
 <link rel="stylesheet" href="/css/view.css">
 <script src="/js/view.js"></script>
-<script>
-	function deletePost() {
-		var confirmed = confirm("정말로 삭제하겠습니까?");
-		if (confirmed) {
-			var form = document.writeFrm; // 이름(name)이 "writeFrm"인 폼 선택
-			form.method = "post"; // 전송 방식 
-			form.action = "/deleteProcess.jsp"; // 전송 경로
-			form.submit(); // 폼값 전송
-		}
-	}
-</script>
+
 </head>
 
 <body>
 	<%@ include file="./common/link.jsp"%>
 
 	<h2>회원제 게시판 - 상세 보기</h2>
-	<form action="writeFrm">
+	<form name="writeFrm">
 		<input type="hidden" name="num" value="<%=num%>" />
 		<!-- 공통 링크 -->
 		<table>
@@ -75,10 +65,10 @@ dao.close(); // DB 연결 해제
 					<button type="button"
 						onclick="location.href='./edit.jsp?num=<%=dto.getNum()%>';">
 						수정하기</button>
-					<button type="button" onclick="deletePost();">삭제하기</button> <%
+					<button type="button" onclick="deletePost()">삭제하기</button> <%
  }
  %>
-					<button type="button" onclick="location.href='./board/list.jsp';">
+					<button type="button" onclick="location.href='./list.jsp';">
 						목록 보기</button>
 				</td>
 			</tr>

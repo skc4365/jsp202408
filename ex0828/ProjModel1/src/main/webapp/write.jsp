@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
+
 <%@ include file="./login/isLoggedIn.jsp"%>
 <!--로그인 확인-->
 <!DOCTYPE html>
@@ -8,20 +8,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript">
-	function validateForm(form) { // 폼 내용 검증
-		if (form.title.value == "") {
-			alert("제목을 입력하세요.");
-			form.title.focus();
-			return false;
-		}
-		if (form.content.value == "") {
-			alert("내용을 입력하세요.");
-			form.content.focus();
-			return false;
-		}
-	}
-</script>
+<link rel="stylesheet" href="/css/view.css">
+<script src="/js/view.js"></script>
+
 </head>
 <body>
 	<jsp:include page="./common/link.jsp" />
@@ -42,7 +31,7 @@
 				<td colspan="2" align="center">
 					<button type="submit">작성 완료</button>
 					<button type="reset">다시 입력</button>
-					<button type="button" onclick="location.href='./board/list.jsp';">
+					<button type="button" onclick="location.href='./list.jsp';">
 						목록 보기</button>
 				</td>
 			</tr>

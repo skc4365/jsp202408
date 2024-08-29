@@ -12,7 +12,51 @@ body {
 }
 
 table {
-	border: 1px solid green; 
-	border-collapse : collapse;
+	border: 1px solid green;
+	border-collapse: collapse;
 	width: 90%;
+	background: yellow;
+	font-size: 18px;
+}
+
+tr, td {
+	border: 1px solid green;
+	border-collapse: collapse;
+}
+
+td {
+	padding: 10px;
+}
+
+button {
+	width: 120px;
+	height: 60px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.loginFrm {
+	width: 230px;
+	height: 140px;
+	background-color: aqua;
+	font-size: 20px;
+	padding: 20px;
+}
+
+.loginFrm>input {
+	width: 120px;
+	height: 25px;
+	margin: 8px;
+	font-size: 20px;
+}
+
+input {
+	width: 180px;
+	height: 60px;
+}
+
+.searchField {
+	width: 120px;
+	height: 60px;
+	font-size: 26px;
 }

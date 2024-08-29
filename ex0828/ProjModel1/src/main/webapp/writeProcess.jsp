@@ -22,7 +22,7 @@ dao.close();
 
 // 성공 or 실패? 
 if (iResult == 1) {
-	response.sendRedirect("./board/list.jsp");
+	response.sendRedirect("./list.jsp");
 } else {
 	JSFunction.alertBack("글쓰기에 실패하였습니다.", out);
 }

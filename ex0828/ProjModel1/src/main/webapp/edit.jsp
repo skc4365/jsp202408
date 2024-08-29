@@ -20,20 +20,8 @@ dao.close(); // DB 연결 해제
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript">
-	function validateForm(form) { // 폼 내용 검증 
-		if (form.title.value == "") {
-			alert("제목을 입력하세요.");
-			form.title.focus();
-			return false;
-		}
-		if (form.content.value == "") {
-			alert("내용을 입력하세요.");
-			form.content.focus();
-			return false;
-		}
-	}
-</script>
+<link rel="stylesheet" href="/css/view.css">
+<script src="/js/view.js"></script>
 </head>
 <body>
 	<jsp:include page="./common/link.jsp" />
@@ -57,7 +45,7 @@ dao.close(); // DB 연결 해제
 				<td colspan="2" align="center">
 					<button type="submit">작성 완료</button>
 					<button type="reset">다시 입력</button>
-					<button type="button" onclick="location.href='./board/list.jsp';">
+					<button type="button" onclick="location.href='./list.jsp';">
 						목록 보기</button>
 				</td>
 			</tr>

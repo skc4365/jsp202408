@@ -6,6 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Session</title>
+<link rel="stylesheet" href="/css/view.css">
+<script src="/js/view.js"></script>
 </head>
 
 <body>
@@ -19,24 +21,12 @@
 		로그인 상태가 : <span style="color: red; font-size: 1.2em;"> <%=request.getAttribute("LoginErrMsg") == null ? "" : request.getAttribute("loginErrMsg")%>
 		</span> 입니다.
 	</p>
-	<script>
-		function validateForm(form) {
-			if (!form.user_id.value) {
-				alert("아이디를 입력하세요");
-				return false;
-			}
 
-			if (form.user_pw.value == "") {
-				alert("패스워드를 입력하세요");
-				return false;
-			}
-		}
-	</script>
-	<form action="./loginProcess.jsp" method="get" name="loginFrm"
-		onsubmit="return validateForm(this)">
-		아이디: <input type="text" name="user_id"><br> 패스워드: <input
+	<form action="./loginProcess.jsp" method="get" class="loginFrm"
+		name="loginFrm" onsubmit="return validateFormLogin(this)">
+		아 이 디 : <input type="text" name="user_id"><br> 패스워드: <input
 			type="password" name="user_pw"><br> <input type="submit"
-			id="로그인하기">
+			value="로그인">
 	</form>
 	<%
 	} else {

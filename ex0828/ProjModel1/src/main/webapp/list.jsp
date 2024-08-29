@@ -7,7 +7,10 @@
 	pageEncoding="UTF-8"%>
 
 <%
+// DAO를 생성해 DB에 연결
 BoardDAO dao = new BoardDAO(application);
+
+// 사용자가 입력한 검색 조건을 Map에 저장
 Map<String, Object> param = new HashMap<String, Object>();
 String searchField = request.getParameter("searchField");
 String searchWord = request.getParameter("searchWord");
@@ -15,6 +18,7 @@ if (searchWord != null) {
 	param.put("searchField", searchField);
 	param.put("searchWord", searchWord);
 }
+
 int totalCount = dao.selectCount(param); // 게시물 수 확인
 List<BoardDTO> boardLists = dao.selectList(param); // 게시물 목록 받기
 dao.close(); // DB 연결 닫기
@@ -25,6 +29,8 @@ dao.close(); // DB 연결 닫기
 <head>
 <meta charset="UTF-8">
 <title>회원 게시판</title>
+<link rel="stylesheet" href="/css/view.css">
+<script src="/js/view.js"></script>
 </head>
 
 <body>
@@ -34,7 +40,7 @@ dao.close(); // DB 연결 닫기
 	<form method="get">
 		<table>
 			<tr>
-				<td><select name="searchField">
+				<td><select name="searchField" class="searchField">
 						<option value="title">제목</option>
 						<option value="content">내용</option>
 				</select> <input type="text" name="searchWord"> <input type="submit"

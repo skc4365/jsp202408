@@ -27,7 +27,7 @@
  }
  %>
 			</td>
-			<td><a href="/board/list.jsp">게시판(페이징X)</a></td>
+			<td><a href="/list.jsp">게시판(페이징X)</a></td>
 			<td><a href="/pagingBoard/list.jsp">게시판(페이징O)</a></td>
 		</tr>
 	</table>

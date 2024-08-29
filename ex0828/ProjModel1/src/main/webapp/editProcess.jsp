@@ -24,7 +24,7 @@ dao.close();
 // 성공/실패 처리
 if (affected == 1) {
 	// 성공 시 상세 보기 페이지로 이동
-	response.sendRedirect("/view.jsp?num=" + dto.getNum());
+	response.sendRedirect("./view.jsp?num=" + dto.getNum());
 } else {
 	// 실패 시 이전 페이지로 이동
 	JSFunction.alertBack("수정하기에 실패하였습니다.", out);
